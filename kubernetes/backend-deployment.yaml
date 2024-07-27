@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: your-repo/backend:latest
+        image: public.ecr.aws/g9m4a7g1/back-end-repo:latest
         ports:
         - containerPort: 5000
 ---
