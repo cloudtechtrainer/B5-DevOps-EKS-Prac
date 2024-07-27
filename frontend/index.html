@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web App</title>
+</head>
+<body>
+    <h1>Welcome to the Simple Web App</h1>
+    <p id="backend-data">Loading...</p>
+    <script>
+        fetch('/api/data')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('backend-data').textContent = data.message;
+            });
+    </script>
+</body>
+</html>
