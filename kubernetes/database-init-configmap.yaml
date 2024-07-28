@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: database-init-script
+data:
+  init.sql: |
+    CREATE DATABASE IF NOT EXISTS simpledb;

@@ -20,6 +20,17 @@ spec:
           value: "root"
         ports:
         - containerPort: 3306
+        volumeMounts:
+        - name: init-script
+          mountPath: /docker-entrypoint-initdb.d
+          subPath: init.sql
+      volumes:
+      - name: init-script
+        configMap:
+          name: database-init-script
+          items:
+          - key: init.sql
+            path: init.sql
 ---
 apiVersion: v1
 kind: Service
